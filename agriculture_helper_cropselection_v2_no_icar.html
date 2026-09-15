@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agriculture Helper - useful farming tools, crop guidance, weather, calculators and agricultural information.">
+  <title>Agriculture Helper | Smart Farming Tools</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f8f2;
+      color: #18321d;
+      line-height: 1.5;
+    }
+    header {
+      background: #1f6b35;
+      color: white;
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    .logo { font-size: 22px; font-weight: bold; }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 14px;
+      font-size: 14px;
+    }
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 55px 20px 35px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 38px; margin-bottom: 12px; }
+    .hero p { max-width: 700px; margin: auto; color: #4b5f4e; }
+    .features {
+      max-width: 1100px;
+      margin: 10px auto 55px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #dce8dc;
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+    }
+    .icon { font-size: 32px; margin-bottom: 10px; }
+    .card h2 { font-size: 19px; margin-bottom: 7px; }
+    .card p { font-size: 14px; color: #5b695d; margin-bottom: 15px; }
+    .btn {
+      display: inline-block;
+      background: #2d7d3f;
+      color: white;
+      text-decoration: none;
+      border: 0;
+      border-radius: 9px;
+      padding: 9px 14px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .section {
+      scroll-margin-top: 125px;
+      max-width: 1100px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+    }
+    .section h2 { margin-bottom: 12px; }
+    .notice {
+      background: #fff9df;
+      border: 1px solid #eadf9f;
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 14px;
+      color: #625a2b;
+    }
+    footer {
+      background: #173b21;
+      color: #dce9df;
+      text-align: center;
+      padding: 24px 15px;
+      font-size: 13px;
+    }
+    @media (max-width: 650px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav a { margin: 0 10px 0 0; }
+      .hero h1 { font-size: 30px; }
+      .section { scroll-margin-top: 145px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">🌾 Agriculture Helper</div>
+    <div>
+      <a href="#tools">Tools</a>
+      <a href="#info">Information</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>🌾 Smart Farming Tools</h1>
+    <p>
+      Useful tools and information for farmers — crop guidance, farming calculators,
+      weather and more, all in one place.
+    </p>
+  </section>
+
+  <section id="tools" class="features">
+
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h2>AI Crop Scanner</h2>
+      <p>Take or upload a crop photo and connect it to an AI vision service for image analysis.</p>
+      <a class="btn" href="#ai-crop-scanner">Open Scanner</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌱</div>
+      <h2>Crop Doctor</h2>
+      <p>Choose a crop and describe a problem to get possible causes and general guidance.</p>
+      <a class="btn" href="#crop-doctor">Open Tool</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌾</div>
+      <h2>Crop Selection</h2>
+      <p>Use season, soil and water availability to explore suitable crop options.</p>
+      <a class="btn" href="#crop-selection">Open Tool</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🧪</div>
+      <h2>Fertilizer Calculator</h2>
+      <p>Estimate fertilizer requirements using crop and field-area information.</p>
+      <a class="btn" href="#fertilizer-calculator">Open Tool</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">💧</div>
+      <h2>Irrigation Calculator</h2>
+      <p>Estimate water requirements based on crop and field area.</p>
+      <a class="btn" href="#irrigation-calculator">Open Tool</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">💰</div>
+      <h2>Crop Profit Calculator</h2>
+      <p>Enter costs, yield and selling price to estimate revenue and profit.</p>
+      <a class="btn" href="#profit-calculator">Open Tool</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🧮</div>
+      <h2>Kisan Calculator Hub</h2>
+      <p>Land, seed, cost and other useful farming calculators in one section.</p>
+      <a class="btn" href="#kisan-calculator">Open Tool</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌦️</div>
+      <h2>Weather</h2>
+      <p>Search a city/district for current weather, rain probability, humidity, wind and forecast.</p>
+      <a class="btn" href="#weather">Open Tool</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏛️</div>
+      <h2>Government Schemes</h2>
+      <p>Find important farmer schemes, eligibility information and official application portals.</p>
+      <a class="btn" href="#government-schemes">Open Section</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">📈</div>
+      <h2>Mandi / Crop Prices</h2>
+      <p>Market-price information from reliable data sources when available.</p>
+      <a class="btn" href="#mandi-prices">Open Section</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">📚</div>
+      <h2>Farming Knowledge</h2>
+      <p>Simple information about crops, seasons, farming practices and more.</p>
+      <a class="btn" href="#farming-knowledge">Open Section</a>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <section id="kisan-calculator" class="section">
+    <h2>🧮 Kisan Calculator Hub</h2>
+    <p style="color:#5b695d;margin-bottom:16px;">
+      Quick calculators for common farming measurements and planning.
+    </p>
+
+    <div class="card">
+      <h3 style="margin-bottom:12px;">📏 Land Area Converter</h3>
+      <label for="landValue"><strong>Enter Area</strong></label>
+      <input id="landValue" type="number" min="0" step="0.01" placeholder="e.g. 1"
+        style="width:100%;padding:11px;margin:8px 0 10px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <select id="landUnit" style="width:100%;padding:11px;margin:0 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="acre">Acre</option>
+        <option value="hectare">Hectare</option>
+        <option value="sqm">Square metre (m²)</option>
+        <option value="sqft">Square foot (ft²)</option>
+      </select>
+
+      <button class="btn" onclick="convertLand()">Convert</button>
+      <div id="landResult" style="display:none;margin-top:15px;padding:14px;background:#f4f8f2;border-radius:12px;border:1px solid #dce8dc;"></div>
+
+      <hr style="margin:22px 0;border:0;border-top:1px solid #e1e9e1;">
+
+      <h3 style="margin-bottom:12px;">🌱 Seed Calculator</h3>
+      <label for="seedArea"><strong>Field Area (acre)</strong></label>
+      <input id="seedArea" type="number" min="0" step="0.01" placeholder="e.g. 2"
+        style="width:100%;padding:11px;margin:8px 0 10px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <label for="seedRate"><strong>Seed Rate (kg per acre)</strong></label>
+      <input id="seedRate" type="number" min="0" step="0.1" placeholder="e.g. 40"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <button class="btn" onclick="calculateSeed()">Calculate Seed</button>
+      <div id="seedResult" style="display:none;margin-top:15px;padding:14px;background:#f4f8f2;border-radius:12px;border:1px solid #dce8dc;"></div>
+
+      <hr style="margin:22px 0;border:0;border-top:1px solid #e1e9e1;">
+
+      <h3 style="margin-bottom:12px;">💸 Simple Farming Cost Calculator</h3>
+      <p style="font-size:13px;color:#68756a;margin-bottom:10px;">Add any farming expenses to estimate total cost.</p>
+      <label for="cost1"><strong>Expense 1 (₹)</strong></label>
+      <input id="cost1" type="number" min="0" step="1" value="0"
+        style="width:100%;padding:11px;margin:8px 0 9px;border:1px solid #ccd9cc;border-radius:9px;">
+      <label for="cost2"><strong>Expense 2 (₹)</strong></label>
+      <input id="cost2" type="number" min="0" step="1" value="0"
+        style="width:100%;padding:11px;margin:8px 0 9px;border:1px solid #ccd9cc;border-radius:9px;">
+      <label for="cost3"><strong>Expense 3 (₹)</strong></label>
+      <input id="cost3" type="number" min="0" step="1" value="0"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <button class="btn" onclick="calculateFarmingCost()">Calculate Total Cost</button>
+      <div id="costResult" style="display:none;margin-top:15px;padding:14px;background:#f4f8f2;border-radius:12px;border:1px solid #dce8dc;"></div>
+    </div>
+  </section>
+
+  <section id="weather" class="section">
+    <h2>🌦️ Agriculture Weather</h2>
+    <p style="color:#5b695d;margin-bottom:16px;">
+      Enter a city or district to check live weather data and a short forecast.
+    </p>
+
+    <div class="card">
+      <label for="weatherLocation"><strong>City / District</strong></label>
+      <input id="weatherLocation" type="text" value="" placeholder="e.g. Siwan, Patna, Varanasi"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <button class="btn" onclick="getWeather()">🌦️ Check Weather</button>
+      <div id="weatherStatus" style="margin-top:12px;font-size:13px;color:#68756a;"></div>
+      <div id="weatherResult" style="display:none;margin-top:15px;"></div>
+
+      <p style="font-size:12px;color:#68756a;margin-top:16px;">
+        Weather data is fetched from an online weather service. Forecasts are estimates and should not replace local farming advice.
+      </p>
+    </div>
+  </section>
+
+  <section id="government-schemes" class="section">
+    <h2>🏛️ Government Schemes for Farmers</h2>
+    <p style="color:#5b695d;margin-bottom:16px;">
+      Important government schemes and official portals. Always check the official website for the latest eligibility, documents and application rules.
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="icon">💰</div>
+        <h3>PM-KISAN Samman Nidhi</h3>
+        <p>Income support scheme for eligible landholding farmer families. The official portal provides registration, status, beneficiary and eKYC services.</p>
+        <a class="btn" href="https://pmkisan.gov.in/" target="_blank" rel="noopener noreferrer">Official Portal ↗</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3>Crop Insurance</h3>
+        <p>Use the Government's crop-insurance information system to learn about crop insurance, coverage and application-related information.</p>
+        <a class="btn" href="https://pmfby.gov.in/" target="_blank" rel="noopener noreferrer">PMFBY Portal ↗</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🏦</div>
+        <h3>Kisan Credit Card (KCC)</h3>
+        <p>KCC-related information and forms are available through official government resources. Check the latest requirements before applying.</p>
+        <a class="btn" href="https://pmkisan.gov.in/" target="_blank" rel="noopener noreferrer">Official Resources ↗</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔎</div>
+        <h3>Find More Schemes</h3>
+        <p>Search central and state government schemes using your details and eligibility criteria.</p>
+        <a class="btn" href="https://www.myscheme.gov.in/" target="_blank" rel="noopener noreferrer">myScheme ↗</a>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;padding:14px;background:#fff8e8;border:1px solid #ead9a8;border-radius:12px;">
+      <strong>⚠️ Important:</strong> Agriculture Helper does not approve applications or guarantee eligibility. It only helps users reach official information. Do not enter Aadhaar, bank details or OTP anywhere except the official government portal.
+    </div>
+  </section>
+
+  <section id="mandi-prices" class="section">
+    <h2>📈 Mandi / Crop Prices</h2>
+    <p style="color:#5b695d;margin-bottom:16px;">
+      Check current mandi price information through the official Agmarknet market-information portal. Prices vary by mandi, crop, quality and date.
+    </p>
+
+    <div class="card">
+      <label for="mandiCrop"><strong>Crop / Commodity</strong></label>
+      <select id="mandiCrop" style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="">-- Select Crop --</option>
+        <option>Wheat (गेहूँ)</option>
+        <option>Rice / Paddy (धान)</option>
+        <option>Maize (मक्का)</option>
+        <option>Mustard (सरसों)</option>
+        <option>Potato (आलू)</option>
+        <option>Tomato (टमाटर)</option>
+        <option>Onion (प्याज)</option>
+        <option>Chickpea / Gram (चना)</option>
+        <option>Other</option>
+      </select>
+
+      <label for="mandiState"><strong>State</strong></label>
+      <select id="mandiState" style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="">-- Select State --</option>
+        <option>Bihar</option><option>Uttar Pradesh</option><option>Jharkhand</option>
+        <option>West Bengal</option><option>Madhya Pradesh</option><option>Rajasthan</option>
+        <option>Maharashtra</option><option>Punjab</option><option>Haryana</option>
+        <option>Other State</option>
+      </select>
+
+      <button class="btn" onclick="openMandiPrices()">📈 Check Mandi Prices</button>
+      <div id="mandiResult" style="display:none;margin-top:15px;"></div>
+
+      <div style="margin-top:16px;padding:14px;background:#f4f8f2;border:1px solid #dce8dc;border-radius:12px;">
+        <strong>ℹ️ Important:</strong> Mandi prices can change frequently. For the latest market-wise price and arrival data, use the official Agmarknet portal.
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <h3>🏛️ Official Market Data</h3>
+      <p>Agmarknet provides reports on commodity prices and market arrivals.</p>
+      <a class="btn" href="https://agmarknet.gov.in/" target="_blank" rel="noopener noreferrer">Open Agmarknet ↗</a>
+    </div>
+  </section>
+
+  <section id="farming-knowledge" class="section">
+    <h2>📚 Farming Knowledge</h2>
+    <p style="color:#5b695d;margin-bottom:16px;">Simple, practical information about crops, seasons and common farming practices.</p>
+
+    <div class="card">
+      <label for="knowledgeTopic"><strong>Choose a topic</strong></label>
+      <select id="knowledgeTopic" style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="soil">🌱 Soil & Soil Testing</option>
+        <option value="seed">🌾 Seed Selection & Sowing</option>
+        <option value="irrigation">💧 Irrigation Management</option>
+        <option value="pest">🐛 Pest & Disease Management</option>
+        <option value="weed">🌿 Weed Management</option>
+        <option value="weather">🌦️ Weather & Crop Planning</option>
+        <option value="kvk">🏫 KVK / Expert Support</option>
+      </select>
+      <button class="btn" onclick="showKnowledge()">📖 Read Topic</button>
+      <div id="knowledgeResult" style="margin-top:15px;"></div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <h3>🏛️ Trusted Agriculture Resources</h3>
+      <p>For detailed and updated agricultural information, use trusted government and agricultural research sources.</p>
+      <a class="btn" href="https://www.kisansarathi.in/" target="_blank" rel="noopener noreferrer">Open Kisan Sarathi ↗</a>
+    </div>
+
+    <div style="margin-top:14px;padding:14px;background:#fff8e8;border:1px solid #ead9a8;border-radius:12px;">
+      <strong>⚠️ Note:</strong> This section provides general educational information. Crop-specific decisions should consider local soil, weather, variety and advice from a qualified agriculture expert.
+    </div>
+  </section>
+
+  <section id="profit-calculator" class="section">
+    <h2>💰 Crop Profit Calculator</h2>
+    <p style="color:#5b695d;margin-bottom:16px;">
+      Enter your farming costs, expected production and selling price to estimate revenue and profit.
+    </p>
+
+    <div class="card">
+      <label for="profitCrop"><strong>Crop</strong></label>
+      <select id="profitCrop" style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="">-- Select Crop --</option>
+        <option>Wheat (गेहूँ)</option>
+        <option>Rice (धान)</option>
+        <option>Maize (मक्का)</option>
+        <option>Mustard (सरसों)</option>
+        <option>Potato (आलू)</option>
+        <option>Tomato (टमाटर)</option>
+      </select>
+
+      <label for="seedCost"><strong>Seed Cost (₹)</strong></label>
+      <input id="seedCost" type="number" min="0" step="1" placeholder="e.g. 2000"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <label for="fertCost"><strong>Fertilizer Cost (₹)</strong></label>
+      <input id="fertCost" type="number" min="0" step="1" placeholder="e.g. 3000"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <label for="labourCost"><strong>Labour Cost (₹)</strong></label>
+      <input id="labourCost" type="number" min="0" step="1" placeholder="e.g. 4000"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <label for="otherCost"><strong>Other Costs (₹)</strong></label>
+      <input id="otherCost" type="number" min="0" step="1" placeholder="e.g. 2000"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <label for="expectedYield"><strong>Expected Production (quintal)</strong></label>
+      <input id="expectedYield" type="number" min="0" step="0.01" placeholder="e.g. 20"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <label for="sellingPrice"><strong>Selling Price (₹ per quintal)</strong></label>
+      <input id="sellingPrice" type="number" min="0" step="1" placeholder="e.g. 2500"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <button class="btn" onclick="calculateProfit()">Calculate Profit</button>
+      <div id="profitResult" style="display:none;margin-top:18px;padding:16px;background:#f4f8f2;border-radius:12px;border:1px solid #dce8dc;"></div>
+    </div>
+  </section>
+
+  <section id="irrigation-calculator" class="section">
+    <h2>💧 Irrigation Calculator</h2>
+    <p style="color:#5b695d;margin-bottom:16px;">
+      Enter crop, field area and estimated water need per acre to calculate total water requirement.
+    </p>
+
+    <div class="card">
+      <label for="irrigationCrop"><strong>Crop</strong></label>
+      <select id="irrigationCrop" style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="">-- Select Crop --</option>
+        <option>Wheat (गेहूँ)</option>
+        <option>Rice (धान)</option>
+        <option>Maize (मक्का)</option>
+        <option>Mustard (सरसों)</option>
+        <option>Potato (आलू)</option>
+        <option>Tomato (टमाटर)</option>
+      </select>
+
+      <label for="irrigationArea"><strong>Field Area (acre)</strong></label>
+      <input id="irrigationArea" type="number" min="0" step="0.01" placeholder="e.g. 2"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <label for="waterPerAcre"><strong>Estimated water requirement per acre (litres)</strong></label>
+      <input id="waterPerAcre" type="number" min="0" step="1" placeholder="e.g. 10000"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <button class="btn" onclick="calculateIrrigation()">Calculate</button>
+      <div id="irrigationResult" style="display:none;margin-top:18px;padding:16px;background:#f4f8f2;border-radius:12px;border:1px solid #dce8dc;"></div>
+    </div>
+  </section>
+
+  <section id="fertilizer-calculator" class="section">
+    <h2>🧪 Fertilizer Calculator</h2>
+    <p style="color:#5b695d;margin-bottom:16px;">
+      Enter crop, field area and fertilizer requirement per acre to get an estimated total quantity.
+    </p>
+
+    <div class="card">
+      <label for="fertCrop"><strong>Crop</strong></label>
+      <select id="fertCrop" style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="">-- Select Crop --</option>
+        <option value="wheat">Wheat (गेहूँ)</option>
+        <option value="rice">Rice (धान)</option>
+        <option value="maize">Maize (मक्का)</option>
+        <option value="mustard">Mustard (सरसों)</option>
+        <option value="potato">Potato (आलू)</option>
+        <option value="tomato">Tomato (टमाटर)</option>
+      </select>
+
+      <label for="fertArea"><strong>Field Area (acre)</strong></label>
+      <input id="fertArea" type="number" min="0" step="0.01" placeholder="e.g. 2"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <label for="fertPerAcre"><strong>Fertilizer Requirement per acre (kg)</strong></label>
+      <input id="fertPerAcre" type="number" min="0" step="0.1" placeholder="e.g. 50"
+        style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+
+      <button class="btn" onclick="calculateFertilizer()">Calculate</button>
+      <div id="fertResult" style="display:none;margin-top:18px;padding:16px;background:#f4f8f2;border-radius:12px;border:1px solid #dce8dc;"></div>
+    </div>
+  </section>
+
+  <section id="crop-selection" class="section">
+    <h2>🌾 Crop Selection Tool</h2>
+    <p style="color:#5b695d;margin-bottom:16px;">
+      Choose your season, soil and water availability to explore suitable crop options.
+    </p>
+
+    <div class="card">
+      <label for="seasonSelect"><strong>Season</strong></label>
+      <select id="seasonSelect" style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="">-- Select Season --</option>
+        <option value="kharif">Kharif (खरीफ)</option>
+        <option value="rabi">Rabi (रबी)</option>
+        <option value="zaid">Zaid (जायद)</option>
+      </select>
+
+      <label for="soilSelect"><strong>Soil Type</strong></label>
+      <select id="soilSelect" style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="">-- Select Soil --</option>
+        <option value="loamy">Loamy (दोमट)</option>
+        <option value="clay">Clay (चिकनी)</option>
+        <option value="sandy">Sandy (बलुई)</option>
+        <option value="alluvial">Alluvial (जलोढ़)</option>
+      </select>
+
+      <label for="waterSelect"><strong>Water Availability</strong></label>
+      <select id="waterSelect" style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="">-- Select Water Availability --</option>
+        <option value="low">Low (कम)</option>
+        <option value="medium">Medium (मध्यम)</option>
+        <option value="high">High (अच्छी)</option>
+      </select>
+
+      <button class="btn" onclick="suggestCrops()">Find Suitable Crops</button>
+      <div id="cropSelectionResult" style="display:none;margin-top:18px;padding:16px;background:#f4f8f2;border-radius:12px;border:1px solid #dce8dc;"></div>
+    </div>
+  </section>
+
+  <section id="crop-doctor" class="section">
+    <h2>🌱 Crop Doctor</h2>
+    <p style="color:#5b695d;margin-bottom:16px;">
+      Select a crop and problem to see possible causes and general guidance.
+    </p>
+
+    <div class="card">
+      <label for="cropSelect"><strong>🌾 Crop</strong></label>
+      <select id="cropSelect" style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="">-- Select Crop --</option>
+        <option value="wheat">Wheat (गेहूँ)</option>
+        <option value="rice">Rice (धान)</option>
+        <option value="maize">Maize (मक्का)</option>
+        <option value="tomato">Tomato (टमाटर)</option>
+        <option value="potato">Potato (आलू)</option>
+        <option value="mustard">Mustard (सरसों)</option>
+        <option value="chickpea">Chickpea / Gram (चना)</option>
+        <option value="okra">Okra / Lady Finger (भिंडी)</option>
+        <option value="moong">Moong (मूंग)</option>
+        <option value="groundnut">Groundnut (मूंगफली)</option>
+      </select>
+
+      <label for="problemSelect"><strong>🔎 What are you seeing?</strong></label>
+      <select id="problemSelect" style="width:100%;padding:11px;margin:8px 0 14px;border:1px solid #ccd9cc;border-radius:9px;">
+        <option value="">-- Select Problem --</option>
+      </select>
+
+      <button class="btn" onclick="checkCropProblem()">Check Problem</button>
+
+      <div id="cropResult" style="display:none;margin-top:18px;padding:16px;background:#f4f8f2;border-radius:12px;border:1px solid #dce8dc;"></div>
+    </div>
+  </section>
+
+
+  <section id="ai-crop-scanner" class="section">
+    <p style="font-size:13px;color:#68756a;">🔐 Secure AI backend connected. Your Gemini API key stays on the server.</p>
+    <h2>🤖 AI Crop Scanner</h2>
+    <p style="color:#5b695d;margin-bottom:16px;">Take a plant photo or upload one, choose a language, then send it to your connected AI vision service.</p>
+
+    <div class="card">
+      <label for="aiPhoto"><strong>📷 Take Photo / 🖼️ Upload Photo</strong></label>
+      <input id="aiPhoto" type="file" accept="image/*" capture="environment"
+        style="width:100%;padding:11px;margin:8px 0 12px;border:1px solid #ccd9cc;border-radius:9px;background:white;">
+      <img id="aiPreview" alt="Selected crop preview" style="display:none;width:100%;max-height:320px;object-fit:contain;border-radius:12px;border:1px solid #dce8dc;margin:8px 0 14px;background:#f7faf7;">
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+        <button type="button" id="aiHindi" class="btn" onclick="setAILanguage('hi')">🇮🇳 हिंदी</button>
+        <button type="button" id="aiEnglish" class="btn" onclick="setAILanguage('en')">🇬🇧 English</button>
+      </div>
+
+      <button class="btn" type="button" onclick="analyzeCropPhoto()">🔍 Analyze Photo</button>
+      <button class="btn" type="button" onclick="speakAIResult()" style="margin-left:6px;">🔊 Speak</button>
+      <button class="btn" type="button" onclick="stopAISpeech()" style="margin-left:6px;background:#666;">⏹️ Stop</button>
+
+      <div id="aiStatus" style="margin-top:14px;font-size:13px;color:#68756a;"></div>
+      <div id="aiResult" style="display:none;margin-top:15px;padding:16px;background:#f4f8f2;border-radius:12px;border:1px solid #dce8dc;"></div>
+
+      <div style="margin-top:16px;padding:14px;background:#fff8e8;border:1px solid #ead9a8;border-radius:12px;font-size:13px;">
+        <strong>ℹ️ अभी क्या बाकी है?</strong> Photo upload वाला हिस्सा तैयार है। बस AI का secure connection जोड़ना बाकी है। API key इस HTML file में नहीं रखनी है.
+      </div>
+    </div>
+  </section>
+
+  <section id="info" class="section">
+    <h2>⚠️ Important</h2>
+    <div class="notice">
+      Calculators and crop guidance on this website are intended as general estimates and
+      educational information. Actual farming decisions should consider local soil,
+      weather, crop variety and advice from qualified agricultural experts.
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>🌾 About Agriculture Helper</h2>
+    <p>
+      This website is being built step by step. Each tool will be made functional,
+      mobile-friendly and easy to use before moving to the next feature.
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2026 Agriculture Helper · Built for practical farming support
+</footer>
+
+<script>
+
+  function openMandiPrices() {
+    const crop = document.getElementById("mandiCrop").value;
+    const state = document.getElementById("mandiState").value;
+    const result = document.getElementById("mandiResult");
+
+    if (!crop || !state) {
+      result.style.display = "block";
+      result.innerHTML = "<strong>Please select both crop and state.</strong>";
+      return;
+    }
+
+    result.style.display = "block";
+    result.innerHTML = `
+      <div style="padding:14px;background:#fff8e8;border:1px solid #ead9a8;border-radius:12px;">
+        <strong>Selected:</strong> ${escapeHTML(crop)} — ${escapeHTML(state)}
+        <p style="margin-top:8px;">For the latest mandi-wise price, market and arrival details, open the official Agmarknet portal below.</p>
+        <a class="btn" href="https://agmarknet.gov.in/" target="_blank" rel="noopener noreferrer">View Latest Prices ↗</a>
+      </div>`;
+  }
+
+  function showKnowledge() {
+    const topic = document.getElementById("knowledgeTopic").value;
+    const data = {
+      soil: ["🌱 Soil & Soil Testing", "Soil testing helps understand pH and available nutrients. Before major fertilizer decisions, consider a soil test and follow local recommendations."],
+      seed: ["🌾 Seed Selection & Sowing", "Use good-quality seed suited to the local climate and season. Follow the recommended sowing time, spacing and seed rate for the selected crop."],
+      irrigation: ["💧 Irrigation Management", "Irrigation needs depend on crop stage, soil, rainfall and temperature. Avoid unnecessary watering and monitor the field before irrigating."],
+      pest: ["🐛 Pest & Disease Management", "Regularly inspect plants for unusual spots, wilting or insect activity. Identify the problem before choosing any control measure; local expert advice can help with serious outbreaks."],
+      weed: ["🌿 Weed Management", "Weeds compete with crops for water, nutrients and light. Timely field inspection and suitable cultural, mechanical or locally recommended control methods can reduce competition."],
+      weather: ["🌦️ Weather & Crop Planning", "Use weather forecasts to plan irrigation, sowing and harvesting. Heavy rain, heat, strong wind and storms can affect farm operations, so check updated forecasts before important work."],
+      kvk: ["🏫 KVK / Expert Support", "Krishi Vigyan Kendras (KVKs) provide agricultural training, demonstrations and advisory support. For a serious crop problem, contacting a nearby KVK or qualified agriculture expert is a good next step."]
+    };
+    const item = data[topic];
+    document.getElementById("knowledgeResult").innerHTML = `
+      <div style="padding:15px;background:#f4f8f2;border:1px solid #dce8dc;border-radius:12px;">
+        <h3 style="margin-bottom:8px;">${item[0]}</h3>
+        <p style="margin:0;line-height:1.65;">${item[1]}</p>
+      </div>`;
+  }
+
+  function comingSoon(name) {
+    alert(name + " will be added as a working feature step by step.");
+  }
+
+  const cropProblems = {
+    wheat: [
+      ["yellow", "Leaves turning yellow", "Nutrient deficiency, water stress, root problems, or disease are possible.", "Check whether older or newer leaves are affected, inspect soil moisture and drainage, and consider a soil test before adding fertilizer.", "Look at leaf pattern, soil moisture, plant stage, and whether symptoms are spreading."],
+      ["spots", "Spots / lesions on leaves", "Several fungal, bacterial, or environmental problems can cause leaf spots.", "Avoid unnecessary leaf wetting, improve field observation, and get the problem identified before using any treatment.", "Check spot shape, color, spread, and whether stems or other plants are also affected."],
+      ["insects", "Insects / pest attack", "Different insects can affect wheat at different growth stages.", "Inspect leaves, stems, and growing points. Identify the insect before choosing a control method and follow local recommendations.", "Check where insects are present and whether leaves show chewing, sucking, or curling damage."],
+      ["wilting", "Plants wilting / drying", "Water stress, root damage, disease, or poor drainage can cause wilting.", "Check soil moisture and roots where practical. Avoid both prolonged dryness and unnecessary overwatering.", "Compare affected and healthy plants and inspect the soil around the roots."]
+    ],
+    rice: [
+      ["yellow", "Leaves turning yellow", "Nutrient imbalance, water-management problems, or disease may be involved.", "Check field water level, drainage, crop stage, and soil condition. Consider soil testing before adding nutrients.", "See whether yellowing is uniform, starts on older leaves, or occurs in patches."],
+      ["spots", "Brown / dark spots", "Leaf spots can be associated with fungal, bacterial, or other plant problems.", "Observe whether symptoms are spreading and seek local diagnosis before treatment.", "Check spot size, color, leaf position, and whether similar symptoms occur across the field."],
+      ["insects", "Insects / pest attack", "Rice can be affected by several insect pests at different stages.", "Inspect leaves, stems, and growing points and identify the insect first. Use only locally recommended measures.", "Look for insects, eggs, webbing, leaf folding, or unusual plant damage."],
+      ["wilting", "Plants wilting / drying", "Water stress, root damage, disease, or unsuitable field conditions may be involved.", "Check field water and drainage and inspect affected plants compared with healthy plants.", "Check whether the issue is in isolated patches or across the whole field."]
+    ],
+    maize: [
+      ["yellow", "Leaves turning yellow", "Nutrient deficiency, water stress, root problems, or disease are possible.", "Check moisture, drainage, plant stage, and soil fertility. Consider soil testing before adding nutrients.", "Check whether yellowing starts on older or newer leaves and whether it follows leaf veins."],
+      ["spots", "Spots / lesions", "Spots can result from different diseases or environmental stress.", "Observe whether spots are spreading and seek local diagnosis before treatment.", "Check spot color, shape, spread, and whether stems or neighboring plants are affected."],
+      ["insects", "Insects / pest attack", "Maize can be affected by several pests, especially around leaves and growing points.", "Inspect leaves and growing points, identify the pest, and follow locally approved guidance.", "Look for chewing marks, holes, frass, insects, or damaged growing points."],
+      ["wilting", "Plants wilting / drying", "Water stress, root injury, disease, or poor drainage may cause wilting.", "Check soil moisture and drainage and compare affected plants with healthy ones.", "Inspect roots where practical and note whether wilting occurs in patches."]
+    ],
+    tomato: [
+      ["yellow", "Leaves turning yellow", "Nutrient issues, watering problems, root stress, or disease may be involved.", "Check watering and drainage. Consider soil testing and get a diagnosis if symptoms spread.", "Check whether older or newer leaves are affected and look for spots or curling."],
+      ["spots", "Leaf spots", "Leaf spots may be caused by plant diseases or environmental conditions.", "Avoid prolonged leaf wetness and improve airflow around plants. Get the problem identified before treatment.", "Check the underside of leaves, spot margins, spread, and whether fruit is affected."],
+      ["insects", "Insects / pest attack", "Tomato plants can be affected by multiple insect pests.", "Check new leaves and leaf undersides. Identify the pest before selecting any control method.", "Look for tiny insects, eggs, sticky residue, curling, or chewing damage."],
+      ["wilting", "Plant wilting", "Heat, water stress, root problems, or disease can cause wilting.", "Check soil moisture and drainage and compare affected plants with healthy plants.", "Check whether wilting happens at a particular time and whether stems or roots look abnormal."]
+    ],
+    potato: [
+      ["yellow", "Leaves turning yellow", "Nutrient stress, water issues, ageing leaves, or disease may be involved.", "Check soil moisture and drainage and note whether symptoms begin on older or newer leaves.", "Inspect leaf pattern, plant age, soil condition, and nearby healthy plants."],
+      ["spots", "Dark spots on leaves", "Different potato diseases and environmental stresses can cause leaf spots.", "Inspect whether spots are spreading and get local expert confirmation before applying treatment.", "Check whether spots have rings, a border, or appear mainly on older leaves."],
+      ["insects", "Insects / pest attack", "Potato crops can have several insect pests.", "Inspect leaves and stems, identify the pest first, and follow locally recommended measures.", "Look under leaves and around stems for insects, eggs, holes, or chewing damage."],
+      ["wilting", "Plants wilting / drying", "Water stress, root problems, disease, or poor drainage may be involved.", "Check soil moisture and drainage and inspect affected plants compared with healthy plants.", "Check whether wilting is patchy and inspect roots/tubers where practical."]
+    ],
+    mustard: [
+      ["yellow", "Leaves turning yellow", "Nutrient imbalance, water stress, or disease may be involved.", "Check moisture and drainage and consider soil testing before adding fertilizer.", "Check whether yellowing starts on older leaves and whether plants are otherwise healthy."],
+      ["spots", "Spots on leaves", "Leaf spots can have several possible causes.", "Observe the pattern and spread and seek local diagnosis before treatment.", "Check spot color, size, spread, and whether stems or pods are affected."],
+      ["insects", "Insects / pest attack", "Mustard can be affected by several insect pests.", "Inspect growing tips and undersides of leaves and identify the insect before control.", "Look for clusters of insects, curling leaves, holes, or sticky residue."],
+      ["wilting", "Plants wilting / drying", "Water stress, root problems, disease, or poor drainage may be involved.", "Check soil moisture and drainage and compare affected plants with healthy plants.", "Check whether wilting is isolated or spreading and inspect the root area where practical."]
+    ],
+    chickpea: [
+      ["yellow", "Leaves turning yellow", "Nutrient stress, water stress, root problems, or disease may be involved.", "Check soil moisture and drainage and consider soil testing before adding fertilizer.", "Check older versus newer leaves and look for root or stem symptoms."],
+      ["spots", "Spots on leaves", "Several diseases and environmental conditions can cause spots.", "Observe spread and get local diagnosis before choosing treatment.", "Check spot color, size, shape, and whether pods or stems are affected."],
+      ["insects", "Insects / pest attack", "Chickpea can be affected by different insect pests, especially around leaves and pods.", "Inspect leaves, flowers, and pods and identify the pest before control.", "Look for holes, larvae, eggs, or damaged flowers and pods."],
+      ["wilting", "Plants wilting / drying", "Root disease, water stress, or poor drainage can cause wilting.", "Check soil and drainage and compare affected plants with healthy plants.", "Check whether whole plants or individual branches are affected and inspect roots where practical."]
+    ],
+    okra: [
+      ["yellow", "Leaves turning yellow", "Nutrient imbalance, watering problems, root stress, or disease may be involved.", "Check watering, drainage, and soil condition before adding fertilizer.", "Check older/newer leaves and look for insects or spots on the undersides."],
+      ["spots", "Leaf spots", "Fungal, bacterial, or environmental problems can produce leaf spots.", "Avoid prolonged leaf wetness and seek diagnosis if spots are spreading.", "Check spot pattern, spread, and whether stems or pods are affected."],
+      ["insects", "Insects / pest attack", "Okra can be affected by sucking and chewing insects.", "Inspect new leaves and leaf undersides, identify the pest, and follow local recommendations.", "Look for insects, holes, curling, sticky residue, or damaged shoots."],
+      ["wilting", "Plants wilting", "Heat, water stress, root damage, or disease may cause wilting.", "Check soil moisture and drainage and compare affected plants with healthy ones.", "Note time of day, field pattern, and any stem/root symptoms."]
+    ],
+    moong: [
+      ["yellow", "Leaves turning yellow", "Nutrient stress, water stress, root problems, or disease may be involved.", "Check soil moisture and drainage and consider a soil test before adding fertilizer.", "Check older/newer leaves and whether yellowing occurs in patches."],
+      ["spots", "Spots on leaves", "Several diseases and environmental stresses can cause leaf spots.", "Observe spread and seek local diagnosis before treatment.", "Check spot color, shape, spread, and whether pods are affected."],
+      ["insects", "Insects / pest attack", "Moong can be affected by several insect pests.", "Inspect leaves, flowers, and pods and identify the insect before selecting control measures.", "Look for chewing, sucking damage, insects, eggs, or curling leaves."],
+      ["wilting", "Plants wilting / drying", "Water stress, root problems, disease, or poor drainage may be involved.", "Check soil moisture and drainage and inspect affected plants compared with healthy ones.", "Check whether wilting is patchy and inspect roots where practical."]
+    ],
+    groundnut: [
+      ["yellow", "Leaves turning yellow", "Nutrient stress, water issues, root problems, or disease may be involved.", "Check soil moisture, drainage, crop stage, and soil condition before adding nutrients.", "Check whether yellowing is uniform or patchy and inspect older/newer leaves."],
+      ["spots", "Spots on leaves", "Leaf spots can be associated with different diseases or environmental conditions.", "Observe whether spots are spreading and seek local diagnosis before treatment.", "Check spot pattern, lower leaves, spread, and whether both leaf surfaces are affected."],
+      ["insects", "Insects / pest attack", "Groundnut can be affected by several insect pests.", "Inspect leaves, stems, and the soil surface and identify the pest before control.", "Look for chewing damage, insects, eggs, or damaged young leaves."],
+      ["wilting", "Plants wilting / drying", "Water stress, root problems, disease, or poor drainage may be involved.", "Check soil moisture and drainage and compare affected plants with healthy plants.", "Inspect roots where practical and note whether affected plants occur in patches."]
+    ]
+  };
+
+  const problemSelect = document.getElementById("problemSelect");
+  const cropSelect = document.getElementById("cropSelect");
+
+  cropSelect.addEventListener("change", function () {
+    problemSelect.innerHTML = '<option value="">-- Select Problem --</option>';
+    const problems = cropProblems[this.value] || [];
+    problems.forEach(p => {
+      const option = document.createElement("option");
+      option.value = p[0];
+      option.textContent = p[1];
+      problemSelect.appendChild(option);
+    });
+    document.getElementById("cropResult").style.display = "none";
+  });
+
+  function checkCropProblem() {
+    const crop = cropSelect.value;
+    const problem = problemSelect.value;
+    const result = document.getElementById("cropResult");
+
+    if (!crop || !problem) {
+      result.style.display = "block";
+      result.innerHTML = "<strong>⚠️ Please select both crop and problem.</strong>";
+      return;
+    }
+
+    const item = cropProblems[crop].find(p => p[0] === problem);
+    if (!item) return;
+    result.style.display = "block";
+    result.innerHTML = `
+      <h3 style="margin-bottom:8px;">🔎 Possible Causes</h3>
+      <p>${item[2]}</p>
+      <h3 style="margin:14px 0 8px;">👀 What to Check</h3>
+      <p>${item[4]}</p>
+      <h3 style="margin:14px 0 8px;">🌱 General Guidance</h3>
+      <p>${item[3]}</p>
+      <div style="margin-top:14px;padding:12px;background:#fff8e8;border:1px solid #ead9a8;border-radius:10px;">
+        <strong>⚠️ Important:</strong> Photo or symptom-based information cannot confirm a disease by itself. Avoid guessing a pesticide or fertilizer treatment. For serious, fast-spreading, or unclear problems, contact a qualified local agriculture expert or KVK.
+      </div>
+    `;
+  }
+
+  const cropOptions = [
+    {name:"Rice (धान)", seasons:["kharif"], soils:["clay","alluvial","loamy"], water:["high","medium"], note:"Usually suits wetter conditions and heavier soils."},
+    {name:"Maize (मक्का)", seasons:["kharif","rabi","zaid"], soils:["loamy","alluvial","sandy"], water:["medium","high"], note:"Flexible crop; good drainage is important."},
+    {name:"Wheat (गेहूँ)", seasons:["rabi"], soils:["loamy","alluvial","clay"], water:["medium","high"], note:"Common rabi crop; soil and irrigation timing matter."},
+    {name:"Mustard (सरसों)", seasons:["rabi"], soils:["loamy","sandy","alluvial"], water:["low","medium"], note:"Often considered where water availability is limited."},
+    {name:"Chickpea / Gram (चना)", seasons:["rabi"], soils:["loamy","sandy","alluvial"], water:["low","medium"], note:"Generally suited to well-drained soils."},
+    {name:"Potato (आलू)", seasons:["rabi"], soils:["loamy","sandy","alluvial"], water:["medium","high"], note:"Needs suitable soil conditions and regular moisture management."},
+    {name:"Tomato (टमाटर)", seasons:["rabi","zaid"], soils:["loamy","sandy","alluvial"], water:["medium","high"], note:"Needs good drainage and careful water management."},
+    {name:"Okra / Lady Finger (भिंडी)", seasons:["kharif","zaid"], soils:["loamy","alluvial","sandy"], water:["medium","high"], note:"Warm-season crop; avoid prolonged waterlogging."},
+    {name:"Moong (मूंग)", seasons:["zaid","kharif"], soils:["sandy","loamy","alluvial"], water:["low","medium"], note:"Short-duration pulse option; local season suitability matters."},
+    {name:"Groundnut (मूंगफली)", seasons:["kharif"], soils:["sandy","loamy"], water:["low","medium"], note:"Often performs better in lighter, well-drained soils."}
+  ];
+
+  function labelForValue(value) {
+    const labels = {
+      kharif:"Kharif (खरीफ)", rabi:"Rabi (रबी)", zaid:"Zaid (जायद)",
+      loamy:"Loamy (दोमट)", clay:"Clay (चिकनी)", sandy:"Sandy (बलुई)", alluvial:"Alluvial (जलोढ़)",
+      low:"Low (कम)", medium:"Medium (मध्यम)", high:"High (अच्छी)"
+    };
+    return labels[value] || value;
+  }
+
+  function suggestCrops() {
+    const season = document.getElementById("seasonSelect").value;
+    const soil = document.getElementById("soilSelect").value;
+    const water = document.getElementById("waterSelect").value;
+    const result = document.getElementById("cropSelectionResult");
+
+    if (!season || !soil || !water) {
+      result.style.display = "block";
+      result.innerHTML = "<strong>⚠️ Please select season, soil and water availability.</strong>";
+      return;
+    }
+
+    const scored = cropOptions.map(c => {
+      const seasonMatch = c.seasons.includes(season);
+      const soilMatch = c.soils.includes(soil);
+      const waterMatch = c.water.includes(water);
+      const score = (seasonMatch ? 40 : 0) + (soilMatch ? 35 : 0) + (waterMatch ? 25 : 0);
+      return { ...c, seasonMatch, soilMatch, waterMatch, score };
+    }).sort((a,b) => b.score - a.score);
+
+    const matches = scored.filter(c => c.score === 100);
+    const close = scored.filter(c => c.score >= 65 && c.score < 100).slice(0, 3);
+
+    result.style.display = "block";
+
+    const card = c => `
+      <div style="margin:10px 0;padding:12px;background:white;border:1px solid #dce8dc;border-radius:10px;">
+        <div style="font-weight:700;font-size:17px;">🌱 ${c.name}</div>
+        <div style="margin-top:5px;color:#526158;font-size:14px;">${c.note}</div>
+        <div style="margin-top:7px;font-size:12px;color:#68756a;">
+          Season: ${c.seasonMatch ? "✓" : "—"} &nbsp; Soil: ${c.soilMatch ? "✓" : "—"} &nbsp; Water: ${c.waterMatch ? "✓" : "—"}
+        </div>
+      </div>`;
+
+    let html = `
+      <h3 style="margin-bottom:6px;">🌾 Best Matches</h3>
+      <p style="margin:0 0 10px;color:#5b695d;">Based on your selected season, soil and water availability:</p>
+    `;
+
+    if (matches.length) {
+      html += matches.map(card).join("");
+    } else {
+      html += `<div style="padding:12px;background:#fff8e8;border:1px solid #ead9a8;border-radius:10px;margin:10px 0;">
+        <strong>⚠️ No exact match found.</strong><br>
+        <span style="font-size:14px;">Here are the closest options based on 2 out of 3 selected factors:</span>
+      </div>`;
+      html += close.map(card).join("");
+    }
+
+    html += `
+      <div style="margin-top:14px;padding:12px;background:#eef7ee;border-radius:10px;font-size:13px;color:#526158;">
+        <strong>Selected:</strong> ${labelForValue(season)} • ${labelForValue(soil)} • ${labelForValue(water)}
+      </div>
+      <p style="margin-top:12px;font-size:12px;color:#68756a;">
+        General guidance only. Actual crop suitability also depends on local climate, variety, soil test, rainfall, market and farm conditions. Confirm important decisions with a local agriculture expert/KVK.
+      </p>
+    `;
+
+    result.innerHTML = html;
+  }
+
+
+  function calculateFertilizer() {
+    const crop = document.getElementById("fertCrop").value;
+    const area = parseFloat(document.getElementById("fertArea").value);
+    const perAcre = parseFloat(document.getElementById("fertPerAcre").value);
+    const result = document.getElementById("fertResult");
+
+    if (!crop || !Number.isFinite(area) || area <= 0 || !Number.isFinite(perAcre) || perAcre < 0) {
+      result.style.display = "block";
+      result.innerHTML = "<strong>Please enter a crop, a valid field area and fertilizer quantity per acre.</strong>";
+      return;
+    }
+
+    const total = area * perAcre;
+    result.style.display = "block";
+    result.innerHTML = `
+      <h3 style="margin-bottom:8px;">🧪 Estimated Requirement</h3>
+      <p><strong>Field Area:</strong> ${area} acre</p>
+      <p><strong>Fertilizer:</strong> ${total.toFixed(2)} kg</p>
+      <p style="margin-top:12px;font-size:12px;color:#68756a;">
+        This is a calculation based only on the quantity you entered per acre. Actual fertilizer
+        recommendations depend on crop variety, soil test, nutrient status and local agricultural advice.
+      </p>
+    `;
+  }
+
+
+  function calculateIrrigation() {
+    const crop = document.getElementById("irrigationCrop").value;
+    const area = parseFloat(document.getElementById("irrigationArea").value);
+    const perAcre = parseFloat(document.getElementById("waterPerAcre").value);
+    const result = document.getElementById("irrigationResult");
+
+    if (!crop || !Number.isFinite(area) || area <= 0 || !Number.isFinite(perAcre) || perAcre < 0) {
+      result.style.display = "block";
+      result.innerHTML = "<strong>Please enter a crop, a valid field area and water requirement per acre.</strong>";
+      return;
+    }
+
+    const totalLitres = area * perAcre;
+    const totalM3 = totalLitres / 1000;
+
+    result.style.display = "block";
+    result.innerHTML = `
+      <h3 style="margin-bottom:8px;">💧 Estimated Water Requirement</h3>
+      <p><strong>Crop:</strong> ${crop}</p>
+      <p><strong>Field Area:</strong> ${area} acre</p>
+      <p><strong>Total Water:</strong> ${totalLitres.toLocaleString("en-IN")} litres</p>
+      <p><strong>Equivalent:</strong> ${totalM3.toFixed(2)} m³</p>
+      <p style="margin-top:12px;font-size:12px;color:#68756a;">
+        This is a simple estimate based on the water quantity you entered per acre.
+        Actual irrigation needs vary with crop stage, soil, rainfall, temperature and irrigation method.
+      </p>
+    `;
+  }
+
+
+  function moneyINR(value) {
+    return "₹" + value.toLocaleString("en-IN", {maximumFractionDigits: 2});
+  }
+
+  function calculateProfit() {
+    const crop = document.getElementById("profitCrop").value;
+    const ids = ["seedCost","fertCost","labourCost","otherCost","expectedYield","sellingPrice"];
+    const values = {};
+    ids.forEach(id => values[id] = parseFloat(document.getElementById(id).value));
+    const result = document.getElementById("profitResult");
+
+    const validCosts = ["seedCost","fertCost","labourCost","otherCost"]
+      .every(id => Number.isFinite(values[id]) && values[id] >= 0);
+    const validProduction = Number.isFinite(values.expectedYield) && values.expectedYield > 0;
+    const validPrice = Number.isFinite(values.sellingPrice) && values.sellingPrice >= 0;
+
+    if (!crop || !validCosts || !validProduction || !validPrice) {
+      result.style.display = "block";
+      result.innerHTML = "<strong>Please select a crop and enter valid values in all fields.</strong>";
+      return;
+    }
+
+    const totalCost = values.seedCost + values.fertCost + values.labourCost + values.otherCost;
+    const revenue = values.expectedYield * values.sellingPrice;
+    const profit = revenue - totalCost;
+    const margin = revenue > 0 ? (profit / revenue) * 100 : 0;
+
+    result.style.display = "block";
+    result.innerHTML = `
+      <h3 style="margin-bottom:10px;">📊 Estimated Result</h3>
+      <p><strong>Crop:</strong> ${crop}</p>
+      <p><strong>Total Cost:</strong> ${moneyINR(totalCost)}</p>
+      <p><strong>Expected Revenue:</strong> ${moneyINR(revenue)}</p>
+      <p><strong>Estimated ${profit >= 0 ? "Profit" : "Loss"}:</strong> ${moneyINR(Math.abs(profit))}</p>
+      <p><strong>Revenue Margin:</strong> ${margin.toFixed(1)}%</p>
+      <p style="margin-top:12px;font-size:12px;color:#68756a;">
+        This is an estimate based on the values entered. Actual yield, costs and market price can change.
+      </p>
+    `;
+  }
+
+
+  function convertLand() {
+    const value = parseFloat(document.getElementById("landValue").value);
+    const unit = document.getElementById("landUnit").value;
+    const result = document.getElementById("landResult");
+
+    if (!Number.isFinite(value) || value < 0) {
+      result.style.display = "block";
+      result.innerHTML = "<strong>Please enter a valid area.</strong>";
+      return;
+    }
+
+    const sqm = unit === "acre" ? value * 4046.8564224 :
+                unit === "hectare" ? value * 10000 :
+                unit === "sqft" ? value * 0.09290304 : value;
+
+    result.style.display = "block";
+    result.innerHTML = `
+      <strong>Converted Area</strong>
+      <p style="margin-top:7px;">${(sqm / 4046.8564224).toFixed(4)} acre</p>
+      <p>${(sqm / 10000).toFixed(4)} hectare</p>
+      <p>${sqm.toFixed(2)} m²</p>
+      <p>${(sqm * 10.7639104167).toFixed(2)} ft²</p>
+      <p style="margin-top:10px;font-size:12px;color:#68756a;">
+        This converter uses standard acre/hectare/m²/ft² conversions. Local land units such as bigha, kattha or dhur vary by region, so they are not assumed here.
+      </p>
+    `;
+  }
+
+  function calculateSeed() {
+    const area = parseFloat(document.getElementById("seedArea").value);
+    const rate = parseFloat(document.getElementById("seedRate").value);
+    const result = document.getElementById("seedResult");
+
+    if (!Number.isFinite(area) || area <= 0 || !Number.isFinite(rate) || rate < 0) {
+      result.style.display = "block";
+      result.innerHTML = "<strong>Please enter a valid area and seed rate.</strong>";
+      return;
+    }
+
+    const total = area * rate;
+    result.style.display = "block";
+    result.innerHTML = `
+      <strong>Estimated Seed Requirement</strong>
+      <p style="margin-top:7px;">${total.toFixed(2)} kg</p>
+      <p style="font-size:12px;color:#68756a;margin-top:8px;">
+        Result is based only on the seed rate entered per acre.
+      </p>
+    `;
+  }
+
+  function calculateFarmingCost() {
+    const ids = ["cost1","cost2","cost3"];
+    const values = ids.map(id => parseFloat(document.getElementById(id).value));
+    const result = document.getElementById("costResult");
+
+    if (values.some(v => !Number.isFinite(v) || v < 0)) {
+      result.style.display = "block";
+      result.innerHTML = "<strong>Please enter valid non-negative expenses.</strong>";
+      return;
+    }
+
+    const total = values.reduce((sum, v) => sum + v, 0);
+    result.style.display = "block";
+    result.innerHTML = `<strong>Total Farming Cost</strong><p style="margin-top:7px;font-size:20px;">₹${total.toLocaleString("en-IN", {maximumFractionDigits:2})}</p>`;
+  }
+
+
+  async function getWeather() {
+    const location = document.getElementById("weatherLocation").value.trim();
+    const status = document.getElementById("weatherStatus");
+    const result = document.getElementById("weatherResult");
+
+    if (!location) {
+      status.textContent = "Please enter a city or district.";
+      result.style.display = "none";
+      return;
+    }
+
+    status.textContent = "Searching location and weather data...";
+    result.style.display = "none";
+
+    try {
+      const geoURL = "https://geocoding-api.open-meteo.com/v1/search?name=" +
+        encodeURIComponent(location) + "&count=1&language=en&format=json";
+      const geoResponse = await fetch(geoURL);
+      if (!geoResponse.ok) throw new Error("Location service unavailable");
+      const geoData = await geoResponse.json();
+
+      if (!geoData.results || !geoData.results.length) {
+        status.textContent = "Location not found. Try another city or district name.";
+        return;
+      }
+
+      const place = geoData.results[0];
+      const forecastURL =
+        "https://api.open-meteo.com/v1/forecast?latitude=" + place.latitude +
+        "&longitude=" + place.longitude +
+        "&current=temperature_2m,relative_humidity_2m,precipitation,weather_code,wind_speed_10m" +
+        "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
+        "&forecast_days=5&timezone=auto";
+
+      const weatherResponse = await fetch(forecastURL);
+      if (!weatherResponse.ok) throw new Error("Weather service unavailable");
+      const data = await weatherResponse.json();
+
+      const current = data.current;
+      const daily = data.daily;
+      const weatherText = weatherCodeText(current.weather_code);
+
+      let forecastHTML = "";
+      for (let i = 0; i < daily.time.length; i++) {
+        forecastHTML += `
+          <div style="padding:12px;border:1px solid #dce8dc;border-radius:10px;margin-top:8px;background:#fbfdfb;">
+            <strong>${formatWeatherDate(daily.time[i])}</strong>
+            <span style="float:right;">${weatherCodeText(daily.weather_code[i])}</span>
+            <p style="margin:7px 0 0;">🌡️ ${daily.temperature_2m_min[i]}°C – ${daily.temperature_2m_max[i]}°C
+            &nbsp; • &nbsp; 🌧️ Rain chance ${daily.precipitation_probability_max[i] ?? 0}%</p>
+          </div>`;
+      }
+
+      status.textContent = "Weather updated successfully.";
+      result.style.display = "block";
+      result.innerHTML = `
+        <div style="padding:15px;background:#f4f8f2;border:1px solid #dce8dc;border-radius:12px;">
+          <h3 style="margin-bottom:6px;">📍 ${escapeHTML(place.name)}${place.admin1 ? ", " + escapeHTML(place.admin1) : ""}</h3>
+          <p style="font-size:13px;color:#68756a;margin-bottom:14px;">Current conditions</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;">
+            <div style="padding:12px;background:white;border-radius:10px;">🌡️ <strong>${current.temperature_2m}°C</strong><br><small>Temperature</small></div>
+            <div style="padding:12px;background:white;border-radius:10px;">💧 <strong>${current.relative_humidity_2m}%</strong><br><small>Humidity</small></div>
+            <div style="padding:12px;background:white;border-radius:10px;">🌧️ <strong>${current.precipitation} mm</strong><br><small>Precipitation</small></div>
+            <div style="padding:12px;background:white;border-radius:10px;">💨 <strong>${current.wind_speed_10m} km/h</strong><br><small>Wind</small></div>
+          </div>
+          <p style="margin-top:14px;"><strong>Condition:</strong> ${weatherText}</p>
+        </div>
+        <div style="margin-top:14px;">
+          <h3>📅 5-Day Forecast</h3>
+          ${forecastHTML}
+        </div>
+      `;
+    } catch (error) {
+      status.textContent = "Weather data could not be loaded. Please check your internet connection and try again.";
+      result.style.display = "none";
+    }
+  }
+
+  function weatherCodeText(code) {
+    const map = {
+      0:"☀️ Clear", 1:"🌤️ Mainly clear", 2:"⛅ Partly cloudy", 3:"☁️ Overcast",
+      45:"🌫️ Fog", 48:"🌫️ Rime fog", 51:"🌦️ Light drizzle", 53:"🌦️ Drizzle",
+      55:"🌧️ Heavy drizzle", 61:"🌦️ Light rain", 63:"🌧️ Rain", 65:"🌧️ Heavy rain",
+      71:"🌨️ Light snow", 73:"🌨️ Snow", 75:"❄️ Heavy snow", 80:"🌦️ Rain showers",
+      81:"🌧️ Rain showers", 82:"⛈️ Heavy rain showers", 95:"⛈️ Thunderstorm",
+      96:"⛈️ Thunderstorm + hail", 99:"⛈️ Thunderstorm + hail"
+    };
+    return map[code] || "🌦️ Variable weather";
+  }
+
+  function formatWeatherDate(dateString) {
+    const d = new Date(dateString + "T12:00:00");
+    return d.toLocaleDateString("en-IN", {weekday:"short", day:"numeric", month:"short"});
+  }
+
+  function escapeHTML(text) {
+    return String(text).replace(/[&<>"']/g, function(ch) {
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[ch];
+    });
+  }
+
+
+  let aiLanguage = "hi";
+  let aiPhotoData = "";
+  let aiSpokenText = "";
+
+  async function setAILanguage(lang) {
+    aiLanguage = lang;
+    document.getElementById("aiHindi").style.opacity = lang === "hi" ? "1" : ".65";
+    document.getElementById("aiEnglish").style.opacity = lang === "en" ? "1" : ".65";
+
+    // If an analysis already exists, changing language will analyze the same photo again.
+    const result = document.getElementById("aiResult");
+    if (aiPhotoData && result && result.style.display !== "none") {
+      await analyzeCropPhoto();
+    }
+  }
+
+  document.getElementById("aiPhoto").addEventListener("change", function () {
+    const file = this.files && this.files[0];
+    const preview = document.getElementById("aiPreview");
+    const status = document.getElementById("aiStatus");
+    if (!file) return;
+    if (!file.type.startsWith("image/")) { status.textContent = "Please select an image file."; return; }
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      aiPhotoData = e.target.result;
+      preview.src = aiPhotoData;
+      preview.style.display = "block";
+      status.textContent = "Photo selected. Ready for AI analysis.";
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // Set this to your deployed secure AI backend URL after deployment.
+  // Never put a Gemini/OpenAI API key directly in this HTML file.
+  const AI_API_URL = "https://sweet-brook-fa03.hk65666768.workers.dev";
+
+  async function prepareAIImage(dataUrl) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        const maxSide = 1024;
+        const scale = Math.min(1, maxSide / Math.max(img.naturalWidth, img.naturalHeight));
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
+        canvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL("image/jpeg", 0.70));
+      };
+      img.onerror = reject;
+      img.src = dataUrl;
+    });
+  }
+
+  async function analyzeCropPhoto() {
+    const status = document.getElementById("aiStatus");
+    const result = document.getElementById("aiResult");
+    if (!aiPhotoData) {
+      status.textContent = aiLanguage === "hi" ? "पहले फोटो लें या upload करें।" : "Please take or upload a photo first.";
+      result.style.display = "none";
+      return;
+    }
+    if (!AI_API_URL || AI_API_URL.includes("PASTE_YOUR_AI_WORKER_URL_HERE")) {
+      status.textContent = aiLanguage === "hi" ? "📷 Photo मिल गई है। अब सिर्फ AI connection जोड़ना बाकी है।" : "📷 Photo is ready. Only the AI connection is still pending.";
+      result.style.display = "block";
+      result.innerHTML = aiLanguage === "hi" ?
+        "<h3>🤖 AI Analysis</h3><p>Website तैयार है, लेकिन secure AI backend URL डालना बाकी है।</p><p style=\"font-size:13px;color:#68756a;\">API key को HTML में नहीं रखना है।</p>" :
+        "<h3>🤖 AI Analysis</h3><p>The website is ready, but the secure AI backend URL still needs to be configured.</p><p style=\"font-size:13px;color:#68756a;\">Do not put the API key in this HTML file.</p>";
+      aiSpokenText = result.innerText;
+      return;
+    }
+
+    status.textContent = aiLanguage === "hi" ? "🤖 फोटो का AI analysis हो रहा है..." : "🤖 AI is analyzing the photo...";
+    result.style.display = "block";
+    result.innerHTML = "<h3>🤖 AI Analysis</h3><p>Analyzing image…</p>";
+
+    try {
+      const optimizedImage = await prepareAIImage(aiPhotoData);
+      const response = await fetch(AI_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ image: optimizedImage, language: aiLanguage === "en" ? "en" : "hi" })
+      });
+
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.error || "AI service returned an error.");
+
+      const text = String(data.text || "").trim();
+      if (!text) throw new Error("AI returned no text result.");
+
+      result.innerHTML = "<h3>🤖 AI Analysis</h3><div style=\"margin-top:10px;line-height:1.65;white-space:pre-wrap;\">" + escapeHTML(text) + "</div>";
+      aiSpokenText = text;
+      status.textContent = aiLanguage === "hi" ? "✅ Analysis पूरा हुआ।" : "✅ Analysis completed.";
+    } catch (error) {
+      result.innerHTML = "<h3>🤖 AI Analysis</h3><p>❌ " + escapeHTML(error.message || "AI analysis failed.") + "</p>";
+      status.textContent = aiLanguage === "hi" ? "AI analysis नहीं हो पाया। Backend/API और internet connection check करें।" : "AI analysis failed. Check the backend/API and internet connection.";
+      aiSpokenText = result.innerText;
+    }
+  }
+
+  function speakAIResult() {
+    const result = document.getElementById("aiResult");
+    if (!result || result.style.display === "none" || !result.innerText.trim()) {
+      document.getElementById("aiStatus").textContent = aiLanguage === "hi" ? "पहले analysis चलाएँ।" : "Run the analysis first.";
+      return;
+    }
+    if (!('speechSynthesis' in window)) {
+      document.getElementById("aiStatus").textContent = "Speech is not supported in this browser.";
+      return;
+    }
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(result.innerText);
+    u.lang = aiLanguage === "hi" ? "hi-IN" : "en-IN";
+    window.speechSynthesis.speak(u);
+  }
+
+  function stopAISpeech() {
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+  }
+
+  setAILanguage("hi");
+
+</script>
+
+</body>
+</html>
